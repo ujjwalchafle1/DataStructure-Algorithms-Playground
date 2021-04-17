@@ -70,3 +70,18 @@ func insertionSort(arr: inout [Int])
 }
 
 insertionSort(arr: &input)
+
+var optional:String?
+//optional = "ujjwal"
+
+while let str = optional {
+  print(str)
+  break
+}
+
+func insertionSort(arr1: inout [Int])
+{
+  print("Yes allowed")
+}
+
+insertionSort(arr1: &input)

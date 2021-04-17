@@ -1,5 +1,4 @@
 //: [Previous](@previous)
-
 import Foundation
 
 //: # Queue
@@ -15,8 +14,8 @@ import Foundation
 
 class Node
 {
-  var value: Any
-  var next: Node?
+  var value: Any,
+      next: Node?
   
   init(_ value: Any) {
     self.value = value
@@ -25,9 +24,9 @@ class Node
 
 class Queue
 {
-  var first :Node?
-  var last  :Node?
-  var size  = 0
+  var first :Node?,
+      last  :Node?,
+      size  = 0
   
   //Add new element to the last position
   func enqueue(_ value: Any)
@@ -94,3 +93,4 @@ queue.printList()
 //: Searching   - O(N)
 //:
 //: Access        - O(N)
+//: [Next](@next)

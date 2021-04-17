@@ -3,7 +3,7 @@ import UIKit
 var str = "Hello, playground"
 
 let num1 = 3589578
-let num2 = 58793852
+let num2 = 5879385
 
 func sameFrequency(a : Int, b : Int) -> Bool{
   
@@ -133,20 +133,20 @@ func isSubsequence(str1: String, str2: String) -> Bool
   return true
 }
 
-isSubsequence(str1: "abc", str2: "abracadabra")
+isSubsequence(str1: "abbc", str2: "agbybcucunia")
 
-func isSubsequence1(str1: String, str2: String) -> Bool {
-  var i = 0;
-  var j = 0;
-//  if (!str1) return true;
-  
-  while (j < str2.count) {
-    if (str2[j] == str1[i]){
-      i += 1}
-    if (i === str1.length) return true;
-    j++;
-  }
-  
- 
-  return false;
-}
+//func isSubsequence1(str1: String, str2: String) -> Bool {
+//  var i = 0;
+//  var j = 0;
+////  if (!str1) return true;
+//
+//  while (j < str2.count) {
+//    if (str2[j] == str1[i]){
+//      i += 1}
+//    if (i === str1.length) return true;
+//    j++;
+//  }
+//
+//
+//  return false;
+//}

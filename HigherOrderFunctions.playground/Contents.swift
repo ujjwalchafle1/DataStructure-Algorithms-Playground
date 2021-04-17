@@ -89,7 +89,7 @@ func filter(by input: String) -> [String]
   
 }
 
-print("filtered array - \(filter(by: ""))")
+print("filtered array - \(filter(by: "Nisha"))")
 
 
 let stringArray = [1,2,3,5]
@@ -98,3 +98,11 @@ let string = stringArray.map {String($0)}.joined(separator: ",")
 
 print(string) // prints: "BobDanBryan"
 
+var a1: String? = "a1"
+var a2: String? = "a2"
+var a3: String? = "a3"
+var array = [a1, a2, a3]
+print(array)
+// prints [Optional("a1"), Optional("a2"),Optional("a3")]
+var newArray = array.compactMap( {$0} )    // use compactMap instead
+print(newArray)             // prints ["a1", "a2", "a3"]

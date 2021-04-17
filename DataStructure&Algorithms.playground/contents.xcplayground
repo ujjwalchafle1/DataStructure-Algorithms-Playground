@@ -11,5 +11,12 @@
         <page name='DoublyLinkedList'/>
         <page name='Stacks'/>
         <page name='Queues'/>
+        <page name='Trees'/>
+        <page name='Heaps'/>
+        <page name='PriorityQueue'/>
+        <page name='HashTables'/>
+        <page name='Graphs'/>
+        <page name='DijkstraAlgorithm'/>
+        <page name='DijkstraAlgoWithHeaps'/>
     </pages>
 </playground>

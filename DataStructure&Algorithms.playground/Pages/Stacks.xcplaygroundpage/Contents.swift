@@ -1,4 +1,4 @@
-
+//: [Previous](@previous)
 import Foundation
 
 //: # Stacks + Queue
@@ -13,8 +13,8 @@ import Foundation
 
 class Node
 {
-  var value: Any
-  var next: Node?
+  var value: Any,
+      next: Node?
   
   init(_ value: Any) {
     self.value = value
@@ -23,8 +23,7 @@ class Node
 
 class Stack
 {
-  var first:Node?
-  var last:Node?
+  var first:Node?, last:Node?
   var length = 0
   
   //This is unshift method from linked list
@@ -97,3 +96,4 @@ stack.printList()
 //: Searching   - O(N)
 //:
 //: Access        - O(N)
+//: [Next](@next)
