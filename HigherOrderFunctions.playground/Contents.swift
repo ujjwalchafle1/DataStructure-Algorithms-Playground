@@ -30,13 +30,13 @@ let ascendingArray = arr.sorted()
 
 //---------------------------------------------------//
 
-//let numbersAsStrings = arr.map { (a) -> String in
-//  return String(a)
-//}
+let numbersAsStrings = arr.map { (a) -> String in
+  return String(a)
+}
 
-//let numbersAsStrings = arr.map {String($0)}
-//
-//print("numbersAsStrings - \(numbersAsStrings)")
+let numbersAsStrings = arr.map {String($0)}
+
+print("numbersAsStrings - \(numbersAsStrings)")
 
 //---------------------------------------------------//
 

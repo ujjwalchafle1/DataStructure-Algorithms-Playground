@@ -16,7 +16,7 @@ class Node
 class PriorityQueue
 {
   
-  var values = [Node]()
+  var values:[Node] = []
   
   func enqueue(value: Any, priority: Int)
   {
@@ -42,8 +42,9 @@ class PriorityQueue
       
       if parentIndex == 0 {break}
     }
-    
-    print(values)
+    for i in values{
+      print(i.priority)
+    }
   }
   
   func dequeue() -> Node?
@@ -98,9 +99,10 @@ class PriorityQueue
 
 
 let queue = PriorityQueue()
-queue.enqueue(value: "Cold fever", priority: 1)
-queue.enqueue(value: "Gunshot wound", priority: 5)
-queue.enqueue(value: "High Fever", priority: 3)
+queue.enqueue(value: "Cold fever", priority: 5)
+queue.enqueue(value: "Gunshot wound", priority: 1)
+queue.enqueue(value: "High Fever", priority: 4)
+queue.enqueue(value: "High Fever", priority: 4)
 
 print(queue.dequeue()?.priority)
 print(queue.dequeue()?.priority)

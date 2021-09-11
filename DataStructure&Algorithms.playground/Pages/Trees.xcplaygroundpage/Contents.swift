@@ -1,6 +1,7 @@
 //: [Previous](@previous)
 import Foundation
 
+//https://www.upgrad.com/blog/binary-tree-vs-binary-search-tree/
 //: # Trees
 //: #### What is Tree?
 //: Data structure that consists of nodes that are in parent-child relationship.🤱🏻
@@ -47,7 +48,6 @@ import Foundation
 //: #### Difference between trres, binary trees and binary search trees -
 //: #### Implement oprations on Binary search trees **BSD** -
 //:**********
-//There tow options : 1. Building Queues with Arrays, 2. Building Queues with Classes
 
 class Node
 {
@@ -74,7 +74,8 @@ class BinarySearchTree
       let newNode = Node(value)
       var currentNode = self.root
       
-      while true {
+      while true
+      {
         if value > currentNode!.value
         {
           if currentNode!.right != nil {
@@ -138,11 +139,8 @@ class BinarySearchTree
           return left.value == value ? true : foundNode(node: left)
         }
       }
-    
     return foundNode(node: currentNode)
   }
-  
-  
 }
 
 
@@ -155,6 +153,7 @@ bst.insert(100)
 bst.insert(26)
 
 bst.insert(1)
+bst.insert(3)
 
 //bst.root?.right = Node(30)
 //bst.root?.right?.right = Node(32)
@@ -193,6 +192,9 @@ bst.search(25)
 //:- Depth-first Search (InOrder, PreOrder, PostOrder) - DFS
 //:- PreOrder - visit node 1st -> visit complete right -> visit complete left
 //:- PostOrder - visit node later ->
+
+
+print(max(2,4))
 extension BinarySearchTree
 {
   func BFS() -> [Any]
@@ -265,3 +267,49 @@ bst.DFSPostOrder()
 bst.DFSInOrder()
 
 //: [Next](@next)
+
+
+//LeetCode
+//Definition for a binary tree node.
+ public class TreeNode {
+public var val: Int
+public var left: TreeNode?
+      public var right: TreeNode?
+      public init() { self.val = 0; self.left = nil; self.right = nil; }
+      public init(_ val: Int) { self.val = val; self.left = nil; self.right = nil; }
+      public init(_ val: Int, _ left: TreeNode?, _ right: TreeNode?) {
+          self.val = val
+          self.left = left
+          self.right = right
+      }
+  }
+ 
+
+class Solution {
+    func closestValue(_ root: TreeNode?, _ target: Double) -> Int {
+        //take the root
+        //compare target with root
+        //if target is less than root
+        //check if left != nil
+        //if nil then parent
+        //if not nil, target is less than left
+        //if target is less than parent
+        //continue..
+        //else check right of parent, is nil?
+        //if not nil, taget < right
+        //if >, check right,
+        //if right is nil, return parent
+    
+            
+        var parent = root
+        var closest = parent!.val
+        
+        while parent != nil
+        {
+            var value = parent!.val
+            closest = abs(Double(value) - target) < abs(Double(closest) - target) ? value : closest
+            parent = target < Double(parent!.val) ? parent!.left! : parent!.right
+        }
+        return closest
+    }
+}

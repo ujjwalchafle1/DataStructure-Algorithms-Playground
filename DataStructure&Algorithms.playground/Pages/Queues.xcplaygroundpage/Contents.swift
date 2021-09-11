@@ -5,7 +5,7 @@ import Foundation
 
 //: #### What is Queue?
 //: A FIFO data structures!
-//: The last element added to the stack will be the first element removed from the stack.
+//: The first element added to the stack will be the first element removed from the stack.
 
 //: #### Where Queues are used in programming?
 //: Background Task, Uploading reources, printing tasks.

@@ -78,7 +78,7 @@ class SinglyLinkedList
     }
   }
   
-  //Add item at the beginning
+  //Add item at the begining
   func unShift(_ value:Any)
   {
     let newHead = Node(value)
@@ -121,7 +121,9 @@ class SinglyLinkedList
       unShift(value)
     } else if index == self.length{
       push(value)
-    } else {
+    }
+    else
+    {
       let newNode       = Node(value)
       let previousNode  = get(index: index-1)
       let nextNode      = previousNode?.next
@@ -159,7 +161,8 @@ class SinglyLinkedList
     var nextNode:Node?
     var preNode:Node?
     
-    for _ in 0..<self.length {
+    for _ in 0..<self.length
+    {
       nextNode = node?.next
       node?.next  = preNode
       preNode = node
@@ -211,11 +214,11 @@ print("head-\(list.head?.value), tail-\(list.tail?.value), length-\(list.length)
 //
 //list.shift()
 //print("head-\(list.head?.value), tail-\(list.tail?.value), length-\(list.length)")
-//
+
 //
 //list.shift()
 //print("head-\(list.head?.value), tail-\(list.tail?.value), length-\(list.length)")
-//
+
 //list.shift()
 //print("head-\(list.head?.value), tail-\(list.tail?.value), length-\(list.length)")
 
@@ -226,12 +229,12 @@ print("head-\(list.head?.value), tail-\(list.tail?.value), length-\(list.length)
 //print("head-\(list.head?.value),next-\(list.head?.next?.value), tail-\(list.tail?.value), length-\(list.length)")
 
 //MARK: GET
-//let node = list.get(index: 3)
+//let node = list.get(index: 1)
 //print(node?.value)
 
 //MARK: SET
-//let node = list.set(value: 4, for: 3)
-//print(node?.value)
+let node = list.set(value: 4, for: 8)
+print(node?.value)
 //
 //print("head-\(list.head?.value), tail-\(list.tail?.value), length-\(list.length)")
 

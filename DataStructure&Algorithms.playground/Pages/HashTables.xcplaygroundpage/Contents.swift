@@ -2,7 +2,7 @@
 
 import Foundation
 
-//: # Heaps
+//: # Hash Table
 //:Objectives:
 //:**********
 //: What is Hash Table?

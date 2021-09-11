@@ -18,7 +18,7 @@ import Foundation
 //:- Directed graph - A directed graph is graph, i.e., a set of objects (called vertices or nodes) that are connected together, where all the edges are directed from one vertex to another. A directed graph is sometimes called a digraph or a directed network.
 //: ![](directed.png)
 //:**********
-//: Weighted graph - Sometimes want to associate some value with the edges in graph
+//: Weighted graph - Sometimes we want to associate some value with the edges in graph
 //: So.. label all the edges with a number. That number (called the weight) could represent:
 //:- Distances between two locations (cities; computers on network)
 //:- Time taken to get from one node to another (stations; states in schedule or plan).

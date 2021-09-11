@@ -27,6 +27,19 @@ class MaxBinaryHeap
   
   var values = [Int]()
   
+  
+  //to get the parent index
+  //substract 1 from newNode(child) index (total array count - 1)
+  //and then divid by 2
+  //this will give the parent of the newNode
+  
+  //now if the newNode value is less than parent value
+  //break the loop
+  
+  //if newNode value is great than parent then
+  //swap newNode with parent node
+  //also swap the index
+  
   func insert(value: Int)
   {
     values.append(value)
@@ -51,9 +64,16 @@ class MaxBinaryHeap
       if parentIndex == 0 {break}
     }
     
-   // print(values)
+    print(values)
   }
   
+  
+  //removing max value
+  //take the 0th index value which will be always max
+  //take the last added value by removing the last object
+  //if array count is still greater than 0
+  //set arr[0] = last added value
+  //and sinkdown
   func extractMax() -> Int?
   {
     if values.isEmpty {return nil}
@@ -76,8 +96,8 @@ class MaxBinaryHeap
     
     while true
     {
-      var leftChildIndex  = (2*idx)+1
-      var rightChildIndex = (2*idx)+2
+      let leftChildIndex  = (2*idx)+1
+      let rightChildIndex = (2*idx)+2
       var swapedIndex:Int?
       
       if (leftChildIndex < lenght) {
@@ -113,6 +133,9 @@ heap.insert(value: 36)
 heap.insert(value: 17)
 heap.insert(value: 12)
 
+heap.insert(value: 25)
+heap.insert(value: 5)
+heap.insert(value: 100)
 heap.insert(value: 25)
 heap.insert(value: 5)
 

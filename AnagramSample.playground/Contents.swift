@@ -33,10 +33,10 @@ func isAnangram(str1:String, str2:String)-> Bool
   return true
 }
 
-isAnangram(str1: str, str2: str2)
+//isAnangram(str1: str, str2: str2)
 
 
-var numbers = [-10,-4,-1,0,1,10]
+var numbers = [-10,-4,-1,0,4]
 
 //return arr of two numbers whose sum is zero
 
@@ -48,35 +48,37 @@ func isSumZero(arr:[Int]) -> [Int] {
     let sum = arr[left] + arr[right]
     if sum == 0 {
       return [arr[right],arr[left]]
-    } else if sum > 0{
+    } else if sum > 0 {
       right -= 1
-    } else if sum < 0{
+    } else if sum < 0 {
       left += 1
     }
   }
   return []
 }
 
-isSumZero(arr: numbers)
+//isSumZero(arr: numbers)
 
 func isSumPresent(arr:[Int], target:Int) -> [Int] {
   
   var left  = 0
   var right = arr.count-1
   for _ in arr {
-    let sum = arr[left] + arr[right]
-    if sum == target {
-      return [arr[right],arr[left]]
-    } else if sum > target{
-      right -= 1
-    } else if sum < target{
-      left += 1
+    if left < right {
+      let sum = arr[left] + arr[right]
+      if sum == target {
+        return [arr[right],arr[left]]
+      } else if sum > target{
+        right -= 1
+      } else if sum < target{
+        left += 1
+      }
     }
   }
   return []
 }
 
-isSumPresent(arr: numbers, target: 8)
+//isSumPresent(arr: numbers, target: 8)
 
 //count of unique numbers
 var basket = [1,2,3,4,5,5,5,5,6,7,7]
@@ -85,20 +87,20 @@ func countUniqueValues(arr: inout [Int]) -> Int {
   if arr.count == 0 {return 0}
   
   var firstPointer = 0
-  var secondCounter = 1
+  var secondPointer = 1
   for _ in arr
   {
-    if arr.count > secondCounter && arr[firstPointer] != arr[secondCounter] {
+    if arr.count > secondPointer && arr[firstPointer] != arr[secondPointer] {
       firstPointer += 1
-      arr[firstPointer] = arr[secondCounter]
+      arr[firstPointer] = arr[secondPointer]
     }
-    secondCounter += 1
+    secondPointer += 1
   }
   print(arr)
   return firstPointer+1
 }
 
-countUniqueValues(arr: &basket)
+//countUniqueValues(arr: &basket)
 
 //max sum of consecutive  numbers
 func maxSumOfConsecutiveNumber(arr: [Int], target:Int) -> Int {
@@ -140,4 +142,4 @@ func dotsAnimations(isLoading:Bool)
   }
 }
 
-dotsAnimations(isLoading: true)
+//dotsAnimations(isLoading: true)

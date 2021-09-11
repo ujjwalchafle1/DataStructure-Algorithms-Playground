@@ -13,7 +13,8 @@ var str2 = "H$$$ello"
 //iterate over the string elements to add each element and track the occurence of the letter in string
 //create one more for look and check if the current letter is present in dict
 //if yes reduce the occurence
-
+//var arr1 = [1,3,4,4]
+//arr1.
 func checkIfEqual(str1: String, str2: String) -> Bool
 {
   let str1New = str1.filter {$0 != "$"}
@@ -51,13 +52,13 @@ func isSubSequence(str1: inout String, str2: inout String) -> Bool
   str1 = String(str1)
   str2 = String(str2)
   
-  var frequency: [String:(String,Int)] = [:]
+  var frequency: [String:(previous: String,occurance: Int)] = [:]
   var previousChar = ""
   
   for char in str1 {
     if frequency[String(char)] != nil {
       let currentChar = frequency[String(char)]!
-      frequency[String(char)]! = (currentChar.0, currentChar.1 + 1)
+      frequency[String(char)]! = (currentChar.previous, currentChar.occurance + 1)
     } else {
       frequency[String(char)] = (previousChar, 1)
     }
@@ -71,19 +72,23 @@ func isSubSequence(str1: inout String, str2: inout String) -> Bool
     {
       let currentChar = frequency[tempStr]!
       
-      if currentChar.0.isEmpty {
-        frequency[tempStr] =  (currentChar.0, currentChar.1 - 1)
-      } else {
-        let previousChar = frequency[currentChar.0]
-        if previousChar!.1 != 0 {
+      if currentChar.previous.isEmpty {
+        if currentChar.occurance != 0 {
           return false
         } else {
-          frequency[tempStr] =  (currentChar.0, currentChar.1 - 1)
+          frequency[tempStr] =  (currentChar.previous, currentChar.occurance - 1)
+        }
+      } else {
+        let previousChar = frequency[currentChar.previous]
+        if previousChar!.occurance != 0 {
+          return false
+        } else {
+          frequency[tempStr] =  (currentChar.previous, currentChar.occurance - 1)
         }
       }
     }
   }
   return true
 }
-var input = "abdc", input2 = "abcd"
+var input = "abc", input2 = "abcabcbb"
 isSubSequence(str1: &input, str2: &input2)

@@ -11,8 +11,7 @@ func sameFrequency(a : Int, b : Int) -> Bool{
   
   var frequency: [Character:Int] = [:]
   
-  for digit in String(a)
-  {
+  for digit in String(a) {
     frequency[digit] != nil ? (frequency[digit]! += 1) : (frequency[digit] = 1)
   }
   
@@ -31,7 +30,7 @@ func sameFrequency(a : Int, b : Int) -> Bool{
   return true
 }
 
-sameFrequency(a: num1, b: num2)
+//sameFrequency(a: num1, b: num2)
 
 
 ///Check for duplicate values
@@ -42,20 +41,20 @@ var arr = ["a","b","c"]
 
 func areThereDuplicates<T:Comparable>(arguments : T...) -> Bool
 {
-//  let inputString = array.reduce("") { (result, a) -> String in
-//    return "\(result)\(a)"
-//  }
-    var inputString: String = ""
-          for argument in arguments {
-            inputString += "\(argument)"
-          }
+  //  let inputString = array.reduce("") { (result, a) -> String in
+  //    return "\(result)\(a)"
+  //  }
+  var inputString = ""
+  for argument in arguments {
+    inputString += "\(argument)"
+  }
   
   var frequency: [Character:Int] = [:]
-
+  
   for digit in inputString
   {
     if frequency[digit] != nil && frequency[digit]! == 1{
-//      frequency[digit]! += 1
+      //      frequency[digit]! += 1
       return true
     } else {
       frequency[digit] = 1
@@ -65,7 +64,7 @@ func areThereDuplicates<T:Comparable>(arguments : T...) -> Bool
   return false
 }
 
-areThereDuplicates(arguments: "a","b","c","a")
+//areThereDuplicates(arguments: "a","b","c","a")
 
 func averagePair(arr : [Int], average : Float) -> Bool
 {
@@ -84,15 +83,15 @@ func averagePair(arr : [Int], average : Float) -> Bool
     }
     numberOfValues += 1
   }
-return false
+  return false
 }
 
-averagePair(arr: [], average: 4)
+//averagePair(arr: [1,2,3], average: 3)
 
 
 func isSubsequence(str1: String, str2: String) -> Bool
 {
-  //create dictionar using str1 with number of occurance of current char, previous char
+  //create dictionary using str1 with number of occurance of current char, previous char
   var frequency : [String:(String, Int)] = [:]
   var isPrevious = ""
   for char in str1
@@ -133,7 +132,7 @@ func isSubsequence(str1: String, str2: String) -> Bool
   return true
 }
 
-isSubsequence(str1: "abbc", str2: "agbybcucunia")
+isSubsequence(str1: "abbcb", str2: "abbcbcucunia")
 
 //func isSubsequence1(str1: String, str2: String) -> Bool {
 //  var i = 0;

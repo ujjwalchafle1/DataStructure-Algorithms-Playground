@@ -44,6 +44,7 @@ class DoublyLinkedList {
       print("length is 0")
       self.tail = nil
       self.head = nil
+      self.length -= 1
       return
     }
     let preNode = self.tail?.previous
@@ -66,10 +67,10 @@ class DoublyLinkedList {
     self.length -= 1
   }
   
-  //Add item at the beginning
+  //Add item at the begining
   func unShift(_ value: Any)
   {
-    let newNode   = Node(value)
+    let newNode = Node(value)
     if self.length == 0
     {
       self.head = newNode

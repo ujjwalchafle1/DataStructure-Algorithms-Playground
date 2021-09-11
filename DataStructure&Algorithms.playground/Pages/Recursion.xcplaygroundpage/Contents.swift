@@ -1,14 +1,9 @@
-//: A UIKit based Playground for presenting user interface
-  
+
 import Foundation
-
-let abc = "hello"
-
 
 //power - which gives the power of the base to the exponent
 //inputs - base value and exponent value
 //return - power integer
-
 
 func power(base: Int,exponent: Int) -> Int
 {
@@ -23,67 +18,57 @@ func power(base: Int,exponent: Int) -> Int
 func power1(base: Int,exponent: Int) -> Int
 {
   var power = base //2  //4   //16
-  if exponent == 0 {
-    return power
-  } else {
+  if exponent == 1 { return power }
+  
     //power *= power //4//16  4//16                 2//1
     power *= power1(base: base, exponent: exponent-1)
 //                          2               3   = 4 * 2
 //                                       2               2      = 2 * 2
 //                                              *  2               1      = 2
-  }
   return power
 }
 
-power1(base: 2, exponent: 4)
+power1(base: 10, exponent: 2)
 
 
-func factorial(num : Int) -> Int{
+func factorial(num : Int) -> Int
+{
   var factorial1 = num
   if factorial1 > 1 {
     factorial1 *= factorial(num: num - 1)
-  } else {
-    return factorial1
   }
   return factorial1
 }
 
-factorial(num: 7)
+factorial(num: 4)
 
 //[1,2,3] = 6
 func product(arr : inout [Int]) -> Int
 {
 
-  var productValue = 0
+  var productValue = 1
   
-  func product1(a : Int)
-  {
-    productValue = a
-  }
+  func setProductValue(value : Int) { productValue = value }
   
   if arr.count > 0 {
-    product1(a: arr.last!)
-    arr.removeLast()
+    setProductValue(value: arr.removeLast())
     productValue *= product(arr: &arr)
   }
   
   return productValue
 }
 
-var arr: [Int] = []
-product(arr: &arr)
 
+var arr: [Int] = [1,2,3]
+product(arr: &arr)
 
 func recursiveRange(number : Int) -> Int
 {
-  if number == 0 {
-    return 0
-  }
+  if number == 0 { return 0 }
   return number + recursiveRange(number: number-1)
 }
 
-
-recursiveRange(number: 3)
+recursiveRange(number: 4)
 
 
 //1,   1,2,3,5,8,.....
